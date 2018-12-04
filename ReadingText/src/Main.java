@@ -7,13 +7,15 @@ import java.util.Arrays;
 public class Main {
 
     private static void findWord(String word, ArrayList<String> sentenceList) {
+        System.out.println("Finding: \"" + word + "\"");
         for(String sentence:sentenceList) {
             int index = 0;
-            while(sentence.indexOf(" " + word + " ", index) != -1) {
-                index = sentence.indexOf(" " + word + " ", index) + word.length();
+            while(sentence.indexOf(" " + word.toLowerCase() + " ", index) != -1) {
+                index = sentence.indexOf(" " + word.toLowerCase() + " ", index) + word.length();
                 System.out.println("Sentence " + sentenceList.indexOf(sentence) + " at " + index);
             }
         }
+        System.out.println();
     }
 
     public static void main(String[] args)throws IOException {
@@ -56,5 +58,6 @@ public class Main {
         }
 
         findWord("as",sentenceList);
+        findWord("a", sentenceList);
     }
 }
