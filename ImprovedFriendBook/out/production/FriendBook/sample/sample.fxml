@@ -59,7 +59,7 @@
             </VBox>
          </children>
       </Group>
-      <Group layoutX="14.0" layoutY="214.0">
+      <Group layoutX="14.0" layoutY="194.0">
          <children>
             <VBox alignment="CENTER" spacing="10.0">
                <children>
@@ -107,7 +107,9 @@
             </VBox>
          </children>
       </Group>
-      <Button layoutX="104.0" layoutY="367.0" mnemonicParsing="false" onAction="#deleteFriend" text="Delete Friend" />
+      <Button layoutX="14.0" layoutY="339.0" mnemonicParsing="false" onAction="#deleteFriend" text="Delete Friend" />
+      <Button layoutX="176.0" layoutY="414.0" mnemonicParsing="false" onAction="#saveListFriends" text="Save list of friends" />
+      <TextField fx:id="txtNameFriendList" layoutX="14.0" layoutY="414.0" promptText="Name of friend list" />
    </children>
    <padding>
       <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
