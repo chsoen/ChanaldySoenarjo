@@ -1,13 +1,10 @@
 package sample;
 
-import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
 
 import java.io.*;
-import java.util.ArrayList;
 
 public class Controller {
     public ListView<Friend> listFriends = new ListView<>();
@@ -18,26 +15,16 @@ public class Controller {
     public Label Age;
     public Label Gender;
     public TextField txtNameFriendList;
-    public ListView listGroups;
+    public ListView<String> listGroups = new ListView<>();
 
-    public ArrayList<String> getFiles(){
-        String dir = System.getProperty("user.dir");
-        File mydir = new File(dir);
-
-        File[] files = mydir.listFiles();
-        ArrayList<String> temp = new ArrayList<>();
-
-        for(File f : files){
-            if(f.getName().endsWith(".txt")){
-                temp.add(f.getName().substring(0, f.getName().indexOf(".")));
-                System.out.println(f.getName().substring(0, f.getName().indexOf(".")));
-            }
+    public void getFiles() {
+        listGroups.getItems().clear();
+        for(String groupNames:new File(System.getProperty("user.dir")).list()){
+            if(groupNames != null && groupNames.endsWith(".txt"))listGroups.getItems().add(groupNames.substring(0, groupNames.indexOf(".")));
         }
-
-        return temp;
     }
 
-    public void createFriend(ActionEvent actionEvent) {
+    public void createFriend() {
         Friend temp = new Friend(txtName.getText(), Integer.parseInt(txtAge.getText()), txtGender.getText());
         listFriends.getItems().add(temp);
         txtName.clear();
@@ -45,19 +32,19 @@ public class Controller {
         txtAge.clear();
     }
 
-    public void deleteFriend(ActionEvent actionEvent) {
+    public void deleteFriend() {
         Friend temp = listFriends.getSelectionModel().getSelectedItem();
         listFriends.getItems().remove(temp);
     }
 
-    public void displayFriend(MouseEvent mouseEvent) {
+    public void displayFriend() {
         Friend temp = listFriends.getSelectionModel().getSelectedItem();
         Name.setText(temp.name);
         Age.setText(Integer.toString(temp.age));
         Gender.setText(temp.gender);
     }
 
-    public void saveListFriends(ActionEvent actionEvent)throws IOException {
+    public void saveListFriends()throws IOException {
         if(!txtNameFriendList.getText().equals("")) {
             FileWriter fw = new FileWriter(txtNameFriendList.getText() + ".txt");
             BufferedWriter bw = new BufferedWriter(fw);
@@ -74,7 +61,16 @@ public class Controller {
     }
 
 
-    public void loadGroup(ActionEvent actionEvent)throws IOException {
-        FileReader fr = new FileReader
+    public void loadGroup()throws IOException {
+        listFriends.getItems().clear();
+        FileReader fr = new FileReader(listGroups.getSelectionModel().getSelectedItem() + ".txt");
+        BufferedReader br = new BufferedReader(fr);
+        String line;
+        while((line = br.readLine())!= null) {
+             String[] fields = line.split(";");
+             Friend temp = new Friend(fields[0], Integer.parseInt(fields[1]), fields[2]);
+             listFriends.getItems().add(temp);
+        }
+        br.close();
     }
 }
