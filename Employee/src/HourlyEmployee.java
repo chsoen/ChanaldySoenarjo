@@ -1,6 +1,7 @@
-public class HourlyEmployee extends Employee{
-    private double hoursPerWeek;
-    private double hourlyWage;
+public abstract class HourlyEmployee extends Employee{
+    protected double hoursPerWeek;
+    protected double hourlyWage;
+    protected boolean hasBenefits;
 
     public HourlyEmployee(String name, int hireYear, double hoursPerWeek, double hourlyWage) {
         super(name, hireYear);
@@ -8,17 +9,5 @@ public class HourlyEmployee extends Employee{
         this.hourlyWage = hourlyWage;
     }
 
-    public double monthlyPay() {
-        return monthlySalary();
-    }
-
-    @Override
-    public double annualSalary() {
-        return hoursPerWeek*hourlyWage*52;
-    }
-
-    @Override
-    public double monthlySalary() {
-        return annualSalary()/12;
-    }
+    public abstract boolean hasBenefits();
 }

@@ -1,8 +1,22 @@
 public class FullTimeEmployee extends HourlyEmployee{
-    private final boolean hasBenefits;
+    private boolean hasBenefits = true;
 
-    public FullTimeEmployee(String name, int hireYear, double hoursPerWeek, double hourlyWage, boolean hasBenefits) {
+    public FullTimeEmployee(String name, int hireYear, double hoursPerWeek, double hourlyWage) {
         super(name, hireYear, hoursPerWeek, hourlyWage);
-        this.hasBenefits = hasBenefits;
+    }
+
+    @Override
+    public boolean hasBenefits() {
+        return false;
+    }
+
+    @Override
+    public double annualSalary() {
+        return hoursPerWeek*hourlyWage*52;
+    }
+
+    @Override
+    public double monthlySalary() {
+        return annualSalary()/12;
     }
 }

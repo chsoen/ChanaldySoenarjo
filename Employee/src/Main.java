@@ -44,9 +44,8 @@ public class Main {
 
     public static void main(String[] args) {
         ArrayList<Employee> employees = new ArrayList<>();
-        employees.add(new SalaryEmployee("Bob", 2030, 100000, true));
-        employees.add(new HourlyEmployee("Boe", 2030, 40, 20));
-        employees.add(new FullTimeEmployee("Robby", 2030, 40, 20, true));
+        employees.add(new SalaryEmployee("Bob", 2030, 100000));
+        employees.add(new FullTimeEmployee("Robby", 2030, 40, 20));
         employees.add(new PartTimeEmployee("Yob", 2030, 40, 20, true));
 
         for(Employee e: employees) {

@@ -1,12 +1,21 @@
 public class PartTimeEmployee extends HourlyEmployee {
-    private boolean benefits;
+    private boolean hasBenefits = true;
 
-    public PartTimeEmployee(String name, int hireYear, double hoursPerWeek, double hourlyWage, boolean benefits) {
+    public PartTimeEmployee(String name, int hireYear, double hoursPerWeek, double hourlyWage, boolean hasBenefits) {
         super(name, hireYear, hoursPerWeek, hourlyWage);
-        this.benefits = hourlyWage >= 20;
     }
 
     public boolean hasBenefits() {
-        return benefits;
+        return hasBenefits;
+    }
+
+    @Override
+    public double annualSalary() {
+        return hoursPerWeek*hourlyWage*52;
+    }
+
+    @Override
+    public double monthlySalary() {
+        return annualSalary()/12;
     }
 }

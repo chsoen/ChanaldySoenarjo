@@ -2,6 +2,11 @@ public abstract class Employee {
     private String name;
     private int hireYear;
 
+    public Employee() {
+        this.name = "John Doe";
+        this.hireYear = 2019;
+    }
+
     public Employee(String name, int hireYear) {
         this.name = name;
         this.hireYear = hireYear;

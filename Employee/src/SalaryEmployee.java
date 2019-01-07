@@ -1,15 +1,10 @@
 public class SalaryEmployee extends Employee {
     private int annualSalary;
-    private final boolean hasBenefits;
+    private boolean hasBenefits = true;
 
-    public SalaryEmployee(String name, int hireYear, int annualSalary, boolean hasBenefits) {
+    public SalaryEmployee(String name, int hireYear, int annualSalary) {
         super(name, hireYear);
         this.annualSalary = annualSalary;
-        this.hasBenefits = hasBenefits;
-    }
-
-    public double monthlyPay() {
-        return monthlySalary();
     }
 
     @Override
@@ -19,6 +14,6 @@ public class SalaryEmployee extends Employee {
 
     @Override
     public double monthlySalary() {
-        return annualSalary/12.0;
+        return annualSalary()/12;
     }
 }
