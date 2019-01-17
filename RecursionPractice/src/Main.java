@@ -6,6 +6,14 @@ import java.util.Scanner;
 public class Main {
     static ArrayList<Node> nodes = new ArrayList<>();
 
+    public static void treeSearch(Node node) {
+        if(node.id == 0) {
+            System.out.println(node.id);
+        } else {
+
+        }
+    }
+
     public static void setup() throws FileNotFoundException {
         Scanner scan = new Scanner(new File("Tree.txt"));
         while(scan.hasNextLine()){
