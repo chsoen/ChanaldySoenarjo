@@ -7,10 +7,21 @@ public class Main {
     static ArrayList<Node> nodes = new ArrayList<>();
 
     public static void treeSearch(Node node) {
-        if(node.id == 0) {
+        if(node.left == 0 && node.right == 0) {
             System.out.println(node.id);
         } else {
-
+            for(Node temp:nodes) {
+                if (temp.id == node.left) {
+                    treeSearch(temp);
+                    break;
+                }
+            }
+            for(Node temp:nodes) {
+                if (temp.id == node.right) {
+                    treeSearch(temp);
+                    break;
+                }
+            }
         }
     }
 
@@ -26,6 +37,6 @@ public class Main {
     }
     public static void main(String[] args) throws FileNotFoundException {
        setup();
-
+       treeSearch(nodes.get(0));
     }
 }
