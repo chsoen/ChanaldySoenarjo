@@ -16,11 +16,13 @@ public class Controller {
     public Label Gender;
 
     public void createFriend(ActionEvent actionEvent) {
-        Friend temp = new Friend(txtName.getText(), Integer.parseInt(txtAge.getText()), txtGender.getText());
-        listFriends.getItems().add(temp);
-        txtName.clear();
-        txtGender.clear();
-        txtAge.clear();
+        if(txtAge.getLength() < 4) {
+            Friend temp = new Friend(txtName.getText(), Integer.parseInt(txtAge.getText()), txtGender.getText());
+            listFriends.getItems().add(temp);
+            txtName.clear();
+            txtGender.clear();
+            txtAge.clear();
+        }
     }
 
 
