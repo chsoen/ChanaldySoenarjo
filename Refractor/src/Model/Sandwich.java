@@ -1,8 +1,9 @@
 package Model;
 
-public class Sandwich extends Items {
+public class Sandwich extends Item {
     public enum Size{
         SMALL(6.5), MEDIUM(8.0), LARGE(10.5);
+
         private double price;
 
         Size(double price){
@@ -12,15 +13,15 @@ public class Sandwich extends Items {
         double getPrice() {return price;}
     }
 
-    Size size;
+    private Size size;
 
     public Sandwich(String name, Size size){
         super(name,size.getPrice());
-        size = size;
+        this.size = size;
     }
 
     @Override
     public double getPrice() {
-        return 0;
+        return size.getPrice();
     }
 }

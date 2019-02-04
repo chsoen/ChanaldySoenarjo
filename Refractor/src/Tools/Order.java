@@ -1,36 +1,42 @@
 package Tools;
 
-import Model.Items;
+import Model.Item;
 import Tools.Time.Time;
 
 import java.util.ArrayList;
 
-public class Order {
-    ArrayList<Items> theorderforacustomer = new ArrayList<>();
+public class Order{
+    private ArrayList<Item> customerOrders;
+    public Time timeWaiting = new Time();
     Time start;
-    Time end;
     boolean out;
     boolean complete;
 
-    Order(ArrayList<Items> items, Time start){
+    Order(ArrayList<Item> items, Time start){
         //if not in inventory add 10 minutes to order
-        theorderforacustomer = items;
+        customerOrders = items;
         this.start = start;
-        end = new Time(start);
-        for(int i = 0; i < 20;i++){
-            end.tick();
-        }
         out = false;
         complete = false;
     }
 
-    public void deliveryInProgross(){
+    private void checkInInventory(ArrayList<Item> inventory){
+        for(Item order:customerOrders){
+            if(inventory.contains(order)) inventory.remove(order);
+            else{
+                timeWaiting.setMin(timeWaiting.getMin() + 10);
+                break;
+            }
+        }
+    }
+
+    public void delivering(){
         out = true;
     }
     public void delivered(){
         complete = true;
     }
     public double getTotalPrice(){
-        return 0;
+        return customerOrders.;
     }
 }

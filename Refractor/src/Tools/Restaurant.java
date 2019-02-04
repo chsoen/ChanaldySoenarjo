@@ -1,24 +1,20 @@
 package Tools;
 
-import Model.Items;
+import Model.Item;
 import Model.Pasta;
 import Model.Pizza;
 import Model.Sandwich;
 
 import java.util.ArrayList;
 
-public class mainthing {
+public class Restaurant {
     private String name;
     private ArrayList<Customer> people = new ArrayList<>();
     private ArrayList<Order> orders = new ArrayList<>();
-    private ArrayList<Items> invent = new ArrayList<>();
+    private ArrayList<Item> inventory = new ArrayList<>();
 
-    public mainthing(String name){
+    public Restaurant(String name){
         this.name = name;
-        startStuff();
-    }
-
-    public void startStuff(){
         for(int i = 0 ; i< 5;i++){
             makePizza();
             makePasta();
@@ -27,14 +23,14 @@ public class mainthing {
     }
 
     private void makePizza() {
-        invent.add(new Pizza());
+        inventory.add(new Pizza("Pepperoni Pizza", 5.00, false));
     }
 
     private void makePasta(){
-        invent.add(new Pasta());
+        inventory.add(new Pasta("Tortellini", 7.00, false));
     }
 
     private void makeSandwich(){
-        invent.add(new Sandwich());
+        inventory.add(new Sandwich("Grilled Ham & Cheese", Sandwich.Size.SMALL));
     }
 }

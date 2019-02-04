@@ -1,6 +1,6 @@
 package Tools;
 
 public class Customer {
-    String name;
-    Address address;
+    private String name;
+    private String address;
 }

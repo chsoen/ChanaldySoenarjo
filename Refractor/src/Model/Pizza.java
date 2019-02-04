@@ -1,17 +1,12 @@
 package Model;
 
-public class Pizza extends Items {
-    private boolean isDeluxe;
-
-    public Pizza(String name, double price, boolean deluxe){
-        super(name, price);
-        isDeluxe = deluxe;
+public class Pizza extends Item {
+    public Pizza(String name, double price, boolean isDeluxe) {
+        super(name, price, isDeluxe);
     }
 
-    @Override
     public double getPrice() {
         if(isDeluxe) return price + 3;
         else return price;
     }
 }
-

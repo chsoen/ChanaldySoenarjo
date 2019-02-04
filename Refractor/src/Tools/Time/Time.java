@@ -1,68 +1,55 @@
 package Tools.Time;
 
-public class Time implements Ticker {
-    private Hour hr;
-    private Minute min;
-    private Second sec;
+public class Time implements Ticker{
+    private int hr;
+    private int min;
+    private int sec;
 
     public Time(){
-        hr = new Hour();
-        min = new Minute();
-        sec = new Second();
+        this.hr = 0;
+        this.min = 0;
+        this.sec = 0;
     }
 
-    public Time(Hour hr, Minute min, Second sec){
+    public Time(int hr, int min, int sec){
         this.hr = hr;
         this.min = min;
         this.sec = sec;
     }
 
-    public Time(Time time){
-        this.hr = time.hr;
-        this.min = time.min;
-        this.sec = time.sec;
-    }
-
-    public Hour getHr() {
-        return hr;
-    }
-
-    public void setHr(Hour hr) {
+    public void setHr(int hr) {
         this.hr = hr;
     }
 
-    public Minute getMin() {
-        return min;
-    }
-
-    public void setMin(Minute min) {
+    public void setMin(int min) {
         this.min = min;
     }
 
-    public Second getSec() {
-        return sec;
+    public void setSec(int sec) {
+        this.sec = sec;
     }
 
-    public void setSec(Second sec) {
-        this.sec = sec;
+    public int getHr(){
+        return hr + min/60 + sec/3600;
+    }
+
+    public int getMin(){
+        return hr*60 + min + sec/60;
+    }
+
+    public int getSec(){
+        return hr*3600 + min * 60 + sec;
     }
 
     public void tick(){
-        sec.tick();
-        if(sec.getSeconds() == 60){
-            sec.setSeconds(0);
-            min.tick();
-            if(min.getMinutes() == 60){
-                min.setMinutes(0);
-                hr.tick();
-                if(hr.getHours() == 24){
-                    hr.setHours(0);
-                }
-            }
-        }
+        int tick = getSec() + 1;
+        hr = tick/3600;
+        min = (tick%3600)/60;
+        sec = ((tick%3600)%60);
     }
 
+    @Override
     public String toString(){
-        return hr.toString()+":"+min.toString()+":"+sec.toString();
+        return hr+":"+min+":"+sec;
     }
 }

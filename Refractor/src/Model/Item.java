@@ -1,10 +1,17 @@
 package Model;
 
-public abstract class Items {
+public abstract class Item {
     protected String name;
     protected double price;
+    protected boolean isDeluxe;
 
-    public Items(String name, double price) {
+    public Item(String name, double price, boolean isDeluxe) {
+        this.name = name;
+        this.price = price;
+        this.isDeluxe = isDeluxe;
+    }
+
+    public Item(String name, double price) {
         this.name = name;
         this.price = price;
     }
