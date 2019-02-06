@@ -60,4 +60,12 @@ public class Restaurant {
         System.out.printf("%.2f", orders.get(customers.indexOf(name)).getTotalPrice());
         System.out.println();
     }
+
+    /*
+    Requires: String name
+    Effects: Prints out the time the order is finished
+     */
+    public void getTimeOrderDone(String name) {
+        System.out.println(orders.get(customers.indexOf(name)).getTimeDone());
+    }
 }

@@ -15,11 +15,11 @@ public class TimeTests {
 
     @Test
     public void testTick(){
-        time.setMin(62);
-        assertEquals("0:2:0",time.toString());
-        time.setHr(25);
+        time.addMin(62);
+        assertEquals("1:2:0",time.toString());
+        time.addHr(25);
         assertEquals("1:2:0", time.toString());
-        time.setSec(70);
-        assertEquals("1:2:10", time.toString());
+        time.addSec(70);
+        assertEquals("1:3:10", time.toString());
     }
 }
