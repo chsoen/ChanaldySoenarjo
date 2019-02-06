@@ -1,42 +1,33 @@
 package Tools;
 
 import Model.Item;
-import Tools.Time.Time;
 
 import java.util.ArrayList;
 
-public class Order{
+public class Order {
     private ArrayList<Item> customerOrders;
-    public Time timeWaiting = new Time();
-    Time start;
-    boolean out;
-    boolean complete;
+    private Time timeFinished = new Time();
+    private Time timeStarted;
 
-    Order(ArrayList<Item> items, Time start){
-        //if not in inventory add 10 minutes to order
+    public Order(ArrayList<Item> items, Time timeStarted) {
         customerOrders = items;
-        this.start = start;
-        out = false;
-        complete = false;
+        this.timeStarted = timeStarted;
     }
 
-    private void checkInInventory(ArrayList<Item> inventory){
-        for(Item order:customerOrders){
-            if(inventory.contains(order)) inventory.remove(order);
-            else{
-                timeWaiting.setMin(timeWaiting.getMin() + 10);
-                break;
+    void checkInInventory(ArrayList<Item> inventory) {
+        for (Item order : customerOrders) {
+            if (inventory.contains(order)) inventory.remove(order);
+            else {
+                if (timeFinished.equals(new Time())) {
+                    timeFinished.setMin(timeStarted.getMin() + 10);
+                }
             }
         }
     }
 
-    public void delivering(){
-        out = true;
-    }
-    public void delivered(){
-        complete = true;
-    }
-    public double getTotalPrice(){
-        return customerOrders.;
+    public double getTotalPrice() {
+        int price = 0;
+        for (Item order : customerOrders) price += order.getPrice();
+        return price;
     }
 }

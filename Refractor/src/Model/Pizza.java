@@ -6,7 +6,7 @@ public class Pizza extends Item {
     }
 
     public double getPrice() {
-        if(isDeluxe) return price + 3;
+        if (isDeluxe) return price + 3;
         else return price;
     }
 }

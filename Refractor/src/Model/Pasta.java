@@ -6,7 +6,7 @@ public class Pasta extends Item {
     }
 
     public double getPrice() {
-        if(isDeluxe) return price + 2;
+        if (isDeluxe) return price + 2;
         else return price;
     }
 }
