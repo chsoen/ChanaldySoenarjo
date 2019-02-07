@@ -28,6 +28,10 @@ public abstract class Item {
         return price;
     }
 
+    /*
+    Requires: Object obj
+    Effects: Returns true if object is the same name and price
+     */
     @Override
     public boolean equals(Object obj) {
         Item item = (Item) obj;

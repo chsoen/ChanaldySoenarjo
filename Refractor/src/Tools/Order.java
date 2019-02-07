@@ -18,6 +18,10 @@ public class Order {
         this.timeDone = new Time(timeStarted);
     }
 
+    Time getTimeDone() {
+        return timeDone;
+    }
+
     /*
     Requires: ArrayList<Item> inventory
     Modifies: This
@@ -41,10 +45,9 @@ public class Order {
         }
     }
 
-    Time getTimeDone() {
-        return timeDone;
-    }
-
+    /*
+    Effects: Adds up all the prices of the orders in customerOrders
+    */
     public double getTotalPrice() {
         int price = 0;
         for (Item order : customerOrders) price += order.getPrice();

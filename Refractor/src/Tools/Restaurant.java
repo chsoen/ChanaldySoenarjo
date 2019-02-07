@@ -28,14 +28,26 @@ public class Restaurant {
         this.name = name;
     }
 
+    /*
+    Requires: String name, double price, boolean isDeluxe, int amount
+    Effects: adds a certain amount of pizzas to the inventory
+     */
     public void makePizza(String name, double price, boolean isDeluxe, int amount) {
         for (int i = 0; i < amount; i++) inventory.add(new Pizza(name, price, isDeluxe));
     }
 
+    /*
+    Requires: String name, double price, boolean isDeluxe, int amount
+    Effects: adds a certain amount of pastas to the inventory
+     */
     public void makePasta(String name, double price, boolean isDeluxe, int amount) {
         for (int i = 0; i < amount; i++) inventory.add(new Pasta(name, price, isDeluxe));
     }
 
+    /*
+    Requires: String name, double price, boolean isDeluxe, int amount
+    Effects: adds a certain amount of sandwiches to the inventory
+     */
     public void makeSandwich(String name, Sandwich.Size size, int amount) {
         for (int i = 0; i < amount; i++) inventory.add(new Sandwich(name, size));
     }

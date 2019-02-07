@@ -22,6 +22,9 @@ public class Sandwich extends Item {
         this.size = size;
     }
 
+    /*
+    Effects: gets the price depending on size of sandwich
+     */
     @Override
     public double getPrice() {
         return size.getPrice();
