@@ -1,8 +1,8 @@
 package UI;
 
 import Model.Item;
-import Model.Pizza;
 import Model.Pasta;
+import Model.Pizza;
 import Model.Sandwich;
 import Tools.Order;
 import Tools.Restaurant;
@@ -21,6 +21,12 @@ public class Main {
         rest1.getPriceOfOrder("Bob");
         rest1.getTimeOrderDone("Bob");
 
-        rest1.makePasta("Ravioli", 6.00, true, 10);
+        rest1.makePasta("Ravioli", 6.00, true, 2);
+
+        ArrayList<Item> order2 = new ArrayList<>();
+        order2.add(new Pasta("Ravioli", 6.00, true));
+
+        rest1.placeOrder("Bill", new Order(order2, new Time(11, 40, 25)));
+        rest1.getTimeOrderDone("Bill");
     }
 }

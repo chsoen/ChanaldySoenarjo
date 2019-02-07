@@ -48,16 +48,16 @@ public class Time {
     }
 
     public void addHr(int hr) {
-        this.hr = hr % 24;
+        this.hr = getHr() + hr % 24;
     }
 
     public void addMin(int min) {
-        this.min = min % 60;
-        this.hr += getHr() + min / 60;
+        this.min = getMin() + min % 60;
+        this.hr = getHr() + min / 60;
     }
 
     public void addSec(int sec) {
-        this.sec = sec % 60;
+        this.sec = getSec() + sec % 60;
         this.min = getMin() + (sec / 60) % 60;
         this.hr = getHr() + sec / 3600;
     }

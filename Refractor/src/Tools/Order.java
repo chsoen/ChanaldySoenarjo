@@ -1,6 +1,9 @@
 package Tools;
 
 import Model.Item;
+import Model.Pasta;
+import Model.Pizza;
+import Model.Sandwich;
 
 import java.util.ArrayList;
 
@@ -22,10 +25,20 @@ public class Order {
      */
     void checkInInventory(ArrayList<Item> inventory) {
         for (Item order : customerOrders) {
-            if (inventory.contains(order)) inventory.remove(order);
-            else if (timeDone.equals(timeStarted)) timeDone.addMin(10);
+            foodPrepared:
+            {
+                for (Item stored : inventory) {
+                    if ((stored instanceof Pizza || stored instanceof Pasta) && stored.equals(order)) {
+                        inventory.remove(order);
+                        break foodPrepared;
+                    } else if (stored instanceof Sandwich && stored.equals(order)) {
+                        inventory.remove(order);
+                        break foodPrepared;
+                    }
+                }
+                timeDone.addMin(10);
+            }
         }
-        if (timeDone.equals(timeStarted)) timeDone = new Time(timeStarted);
     }
 
     Time getTimeDone() {

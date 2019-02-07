@@ -44,6 +44,7 @@ public class Restaurant {
     Requires: String name, Order order
     Modifies: This
     Effects: When someone makes an order, add that person's name to people arrayList and add their order to orders
+    and remove prepared food from inventory
     */
     public void placeOrder(String name, Order order) {
         customers.add(name);
@@ -66,6 +67,8 @@ public class Restaurant {
     Effects: Prints out the time the order is finished
      */
     public void getTimeOrderDone(String name) {
-        System.out.println(orders.get(customers.indexOf(name)).getTimeDone());
+        System.out.print("The time " + name + "\'s order is done: ");
+        System.out.print(orders.get(customers.indexOf(name)).getTimeDone());
+        System.out.println();
     }
 }

@@ -18,8 +18,8 @@ public class TimeTests {
         time.addMin(62);
         assertEquals("1:2:0",time.toString());
         time.addHr(25);
-        assertEquals("1:2:0", time.toString());
+        assertEquals("2:2:0", time.toString());
         time.addSec(70);
-        assertEquals("1:3:10", time.toString());
+        assertEquals("2:3:10", time.toString());
     }
 }

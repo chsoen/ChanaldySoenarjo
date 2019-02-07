@@ -24,5 +24,13 @@ public abstract class Item {
         this.name = name;
     }
 
-    public abstract double getPrice();
+    public double getPrice() {
+        return price;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        Item item = (Item) obj;
+        return this.name.equals(item.name) && this.price == item.price;
+    }
 }
