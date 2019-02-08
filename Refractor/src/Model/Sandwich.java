@@ -23,7 +23,7 @@ public class Sandwich extends Item {
     }
 
     /*
-    Effects: gets the price depending on size of sandwich
+    Effects: Gets the price depending on size of sandwich.
      */
     @Override
     public double getPrice() {

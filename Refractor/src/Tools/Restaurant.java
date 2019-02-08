@@ -30,7 +30,7 @@ public class Restaurant {
 
     /*
     Requires: String name, double price, boolean isDeluxe, int amount
-    Effects: adds a certain amount of pizzas to the inventory
+    Effects: Adds a certain amount of pizzas to the inventory
      */
     public void makePizza(String name, double price, boolean isDeluxe, int amount) {
         for (int i = 0; i < amount; i++) inventory.add(new Pizza(name, price, isDeluxe));
@@ -38,7 +38,7 @@ public class Restaurant {
 
     /*
     Requires: String name, double price, boolean isDeluxe, int amount
-    Effects: adds a certain amount of pastas to the inventory
+    Effects: Adds a certain amount of pastas to the inventory.
      */
     public void makePasta(String name, double price, boolean isDeluxe, int amount) {
         for (int i = 0; i < amount; i++) inventory.add(new Pasta(name, price, isDeluxe));
@@ -46,7 +46,7 @@ public class Restaurant {
 
     /*
     Requires: String name, double price, boolean isDeluxe, int amount
-    Effects: adds a certain amount of sandwiches to the inventory
+    Effects: Adds a certain amount of sandwiches to the inventory.
      */
     public void makeSandwich(String name, Sandwich.Size size, int amount) {
         for (int i = 0; i < amount; i++) inventory.add(new Sandwich(name, size));
@@ -56,7 +56,7 @@ public class Restaurant {
     Requires: String name, Order order
     Modifies: This
     Effects: When someone makes an order, add that person's name to people arrayList and add their order to orders
-    and remove prepared food from inventory
+    and remove prepared food from inventory.
     */
     public void placeOrder(String name, Order order) {
         customers.add(name);
@@ -66,7 +66,7 @@ public class Restaurant {
 
     /*
     Requires: String name
-    Effects: Prints the cost of a person's order
+    Effects: Prints the cost of a person's order.
     */
     public void getPriceOfOrder(String name) {
         System.out.print("The cost of " + name + "\'s order is $");
@@ -76,7 +76,7 @@ public class Restaurant {
 
     /*
     Requires: String name
-    Effects: Prints out the time the order is finished
+    Effects: Prints out the time the order is finished.
      */
     public void getTimeOrderDone(String name) {
         System.out.print("The time " + name + "\'s order is done: ");

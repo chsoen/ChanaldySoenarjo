@@ -30,7 +30,7 @@ public abstract class Item {
 
     /*
     Requires: Object obj
-    Effects: Returns true if object is the same name and price
+    Effects: Returns true if object is the same name and price.
      */
     @Override
     public boolean equals(Object obj) {

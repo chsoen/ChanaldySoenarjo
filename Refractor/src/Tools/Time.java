@@ -47,15 +47,31 @@ public class Time {
         this.sec = sec;
     }
 
+    /*
+    Requires: int hr
+    Modifies: This
+    Effects: Adds hours to clock.
+     */
     public void addHr(int hr) {
         this.hr = getHr() + hr % 24;
     }
 
+    /*
+    Requires: int min
+    Modifies: This
+    Effects: Adds minutes to clock. If over an hour, adds to hr and min.
+     */
     public void addMin(int min) {
         this.min = getMin() + min % 60;
         this.hr = getHr() + min / 60;
     }
 
+    /*
+    Requires: int sec
+    Modifies: This
+    Effects: Adds seconds to clock. If over a minute, adds to min and sec, if over an hour, adds to hour
+    min and sec.
+     */
     public void addSec(int sec) {
         this.sec = getSec() + sec % 60;
         this.min = getMin() + (sec / 60) % 60;
@@ -67,6 +83,10 @@ public class Time {
         return hr + ":" + min + ":" + sec;
     }
 
+    /*
+    Requires: Object obj
+    Effects: Returns true if this and obj have the same hours, minutes, and seconds.
+     */
     @Override
     public boolean equals(Object obj) {
         if (obj.getClass() == Time.class) {

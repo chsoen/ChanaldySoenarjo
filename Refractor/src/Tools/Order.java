@@ -25,7 +25,7 @@ public class Order {
     /*
     Requires: ArrayList<Item> inventory
     Modifies: This
-    Effects: If an item is missing, add 10 minutes to timeDone
+    Effects: If an item is missing, add 10 minutes to timeDone.
      */
     void checkInInventory(ArrayList<Item> inventory) {
         for (Item order : customerOrders) {
@@ -46,7 +46,7 @@ public class Order {
     }
 
     /*
-    Effects: Adds up all the prices of the orders in customerOrders
+    Effects: Adds up all the prices of the orders in customerOrders.
     */
     public double getTotalPrice() {
         int price = 0;
