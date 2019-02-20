@@ -13,7 +13,14 @@ public class Main {
 
         Collections.shuffle(deck);
 
-        deck.peekFirst();
-        deck.peekLast();
+        for (Card card : deck) {
+            System.out.println(card);
+        }
+        System.out.println();
+
+        System.out.println(deck.peekFirst());
+        System.out.println(deck.peekLast());
+
+        System.out.println(deck.peekLast().equals(deck.peekLast()));
     }
 }
