@@ -18,8 +18,8 @@ public class Controller {
     public TextField txtNameFriendList;
     public ListView<String> listGroups = new ListView<>();
 
-    private class NameException extends Throwable {
-        String name = "";
+    private static class NameException extends Throwable {
+        String name;
 
         private NameException(String name) {
             this.name = name;
@@ -27,31 +27,83 @@ public class Controller {
 
         @Override
         public String toString() {
-            return ;
+            if (name.matches("[^a-zA-Z]+")) {
+                return "Please use letters";
+            }
+            if (!name.contains(" ") && name.split(" ").length < 2) {
+                return "Please type full name";
+            }
+            return "How could you mess that up? Wow.";
         }
     }
 
-    public void getFiles() {
-        listGroups.getItems().clear();
-        for (String groupNames : Objects.requireNonNull(new File(System.getProperty("user.dir")).list())) {
-            if (groupNames != null && groupNames.endsWith(".txt"))
-                listGroups.getItems().add(groupNames.substring(0, groupNames.indexOf(".")));
+    private static class AgeException extends Throwable {
+        int ageNum;
+        String age = "";
+
+        private AgeException(int age) {
+            this.ageNum = age;
+        }
+
+        private AgeException(String age) {
+            this.age = age;
+        }
+
+        @Override
+        public String toString() {
+            if (age.isEmpty() && ageNum < 18) {
+                return "Please put an age greater than 18";
+            } else {
+                return "Please use numbers";
+            }
+        }
+    }
+
+    private static class Checker {
+        private static void checkName(String name) throws NameException {
+            if (name.matches("[^a-zA-Z]2+") || !name.contains(" ") && name.split(" ").length < 2) {
+                throw new NameException(name);
+            }
+        }
+
+        private static void checkAge(String age) throws AgeException {
+            if (age.matches("[0-9]+")) {
+                int numAge = Integer.parseInt(age);
+                if (numAge < 18) {
+                    throw new AgeException(numAge);
+                }
+            } else {
+                throw new AgeException(age);
+            }
+
         }
     }
 
     public void createFriend() {
-        try {
-            if (txtName.getText().matches("[^a-zA-Z]+") || !txtName.getText().contains(" ")) {
-                throw new NameException(txtName.getText());
-            }
+        boolean error = false;
 
-            Friend temp = new Friend(txtName.getText(), Integer.parseInt(txtAge.getText()), txtGender.getText());
-            listFriends.getItems().add(temp);
-        } catch (NumberFormatException e) {
-            txtAge.setPromptText("Invalid Age");
+        try {
+            String name = txtName.getText();
+            Checker.checkName(name);
         } catch (NameException e) {
-            txtName.setPromptText("Invalid Name");
+            txtName.setPromptText(e.toString());
+            txtName.clear();
+            error = true;
         }
+
+        try {
+            String age = txtAge.getText();
+            Checker.checkAge(age);
+        } catch (AgeException e) {
+            txtAge.setPromptText(e.toString());
+            txtAge.clear();
+            error = true;
+        }
+
+        if (error) return;
+
+        Friend temp = new Friend(txtName.getText(), Integer.parseInt(txtAge.getText()), txtGender.getText());
+        listFriends.getItems().add(temp);
         txtName.clear();
         txtGender.clear();
         txtAge.clear();
@@ -67,6 +119,14 @@ public class Controller {
         Name.setText(temp.name);
         Age.setText(Integer.toString(temp.age));
         Gender.setText(temp.gender);
+    }
+
+    public void getFiles() {
+        listGroups.getItems().clear();
+        for (String groupNames : Objects.requireNonNull(new File(System.getProperty("user.dir")).list())) {
+            if (groupNames != null && groupNames.endsWith(".txt"))
+                listGroups.getItems().add(groupNames.substring(0, groupNames.indexOf(".")));
+        }
     }
 
     public void saveListFriends() throws IOException {
