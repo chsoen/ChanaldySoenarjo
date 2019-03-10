@@ -30,7 +30,7 @@
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                            </padding>
                         </VBox>
-                        <ListView fx:id="listFriends" layoutX="338.0" layoutY="16.0" onMouseClicked="#displayFriend" />
+                        <ListView fx:id="listFriends" layoutX="338.0" layoutY="96.0" onMouseClicked="#displayFriend" prefHeight="327.0" prefWidth="248.0" />
                         <Group layoutX="14.0" layoutY="14.0">
                            <children>
                               <Button layoutX="90.0" layoutY="145.0" mnemonicParsing="false" onAction="#createFriend" text="Create Friend" />
@@ -58,7 +58,7 @@
                               </VBox>
                               <VBox layoutX="98.0" spacing="25.0">
                                  <children>
-                                    <TextField fx:id="txtName" />
+                                    <TextField fx:id="txtName" prefHeight="25.0" prefWidth="201.0" />
                                     <TextField fx:id="txtAge" />
                                     <TextField fx:id="txtGender" />
                                  </children>
@@ -123,6 +123,17 @@
                               <TextField fx:id="txtNameFriendList" promptText="Name of friend list" />
                            </children>
                         </Pane>
+                        <Group layoutX="375.0" layoutY="10.0">
+                           <children>
+                              <Label text="Sort By">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                              <Button layoutX="95.0" layoutY="10.0" mnemonicParsing="false" onAction="#sortByLsatName" text="Last Name" />
+                              <Button layoutX="95.0" layoutY="50.0" mnemonicParsing="false" onAction="#sortByAge" text="Age" />
+                           </children>
+                        </Group>
                      </children></AnchorPane>
             </content>
           </Tab>

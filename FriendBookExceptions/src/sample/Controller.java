@@ -5,6 +5,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
 import java.io.*;
+import java.util.Comparator;
 import java.util.Objects;
 
 public class Controller {
@@ -30,7 +31,7 @@ public class Controller {
             if (name.matches("[^a-zA-Z]+")) {
                 return "Please use letters";
             }
-            if (!name.contains(" ") && name.split(" ").length < 2) {
+            if (!name.contains(" ") || name.split(" ").length < 2) {
                 return "Please type full name";
             }
             return "How could you mess that up? Wow.";
@@ -53,21 +54,24 @@ public class Controller {
         public String toString() {
             if (age.isEmpty() && ageNum < 18) {
                 return "Please put an age greater than 18";
+            } else if (age.matches("[0-9]{3,}")) {
+                return "Please put a younger age";
             } else {
-                return "Please use numbers";
+                return "Please put a number";
             }
         }
     }
 
     private static class Checker {
         private static void checkName(String name) throws NameException {
-            if (name.matches("[^a-zA-Z]2+") || !name.contains(" ") && name.split(" ").length < 2) {
+            if (name.matches("[^a-zA-Z]2+") ||
+                    (!name.contains(" ") || name.split(" ").length < 2)) {
                 throw new NameException(name);
             }
         }
 
         private static void checkAge(String age) throws AgeException {
-            if (age.matches("[0-9]+")) {
+            if (age.matches("[0-9]{1,3}")) {
                 int numAge = Integer.parseInt(age);
                 if (numAge < 18) {
                     throw new AgeException(numAge);
@@ -157,5 +161,38 @@ public class Controller {
             listFriends.getItems().add(temp);
         }
         br.close();
+    }
+
+    public class NameComparator implements Comparator<Friend> {
+
+        @Override
+        public int compare(Friend o1, Friend o2) {
+            String[] names1 = o1.name.split(" ");
+            String lastName1 = names1[names1.length - 1];
+            String[] names2 = o2.name.split(" ");
+            String lastName2 = names2[names2.length - 1];
+
+            if (lastName1.compareTo(lastName2) == 0) return 0;
+            else if (lastName1.compareTo(lastName2) < 0) return -1;
+            else return 1;
+        }
+    }
+
+    public void sortByLsatName() throws IOException {
+        listFriends.getItems().sort(new NameComparator());
+    }
+
+    public class AgeComparator implements Comparator<Friend> {
+
+        @Override
+        public int compare(Friend o1, Friend o2) {
+            if (o1.age == o2.age) return 0;
+            else if (o1.age < o2.age) return -1;
+            else return 1;
+        }
+    }
+
+    public void sortByAge() throws  IOException {
+        listFriends.getItems().sort(new AgeComparator());
     }
 }

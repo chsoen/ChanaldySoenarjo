@@ -1,5 +1,7 @@
 package sample;
 
+import java.util.Objects;
+
 public class Friend {
     public String name;
     public int age;
