@@ -1,5 +1,6 @@
 package UI;
 
+import Database.DatabaseHandler;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,9 +11,11 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("library.fxml"));
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        Parent root = FXMLLoader.load(getClass().getResource("Layouts/MainWindow.fxml"));
+
+        Scene scene = new Scene(root);
+
+        primaryStage.setScene(scene);
         primaryStage.show();
     }
 

@@ -9,7 +9,7 @@ public class DatabaseHandler {
 
     public DatabaseHandler() {
         createConnection();
-        createMemberTable();
+        createBookTable();
     }
 
     private void createConnection() {
@@ -21,8 +21,8 @@ public class DatabaseHandler {
         }
     }
 
-    private void createMemberTable() {
-        String TABLE_NAME = "MEMBER";
+    private void createBookTable() {
+        String TABLE_NAME = "BOOK";
         try {
             stmt = conn.createStatement();
             DatabaseMetaData dmn = conn.getMetaData();
@@ -30,11 +30,11 @@ public class DatabaseHandler {
             if (tables.next()) {
                 System.out.println("Table " + TABLE_NAME + " already exists");
             } else {
-                String statement = "CREATE TABLE " + TABLE_NAME + "("
-                        + "id varchar(200) primary key, \n"
-                        + "name varchar (200), \n"
-                        + "email varchar (200), \n"
-                        + "nickName varchar (200))";
+                String statement = "CREATE TABLE " + TABLE_NAME + "(" +
+                        "id varchar(200) primary key, \n" +
+                        "title varchar (200), \n" +
+                        "author varchar (200), \n" +
+                        "quantity varchar (200))";
                 System.out.println(statement);
                 stmt.execute(statement);
             }
