@@ -1,10 +1,24 @@
 package UI.Controllers;
 
+import Database.DatabaseHandler;
 import javafx.event.ActionEvent;
+import javafx.fxml.Initializable;
+import javafx.scene.control.TextField;
 
-public class AddStudent {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class AddStudent implements Initializable {
+
+    public TextField studentName;
+    public DatabaseHandler handler;
 
     public void addStudent(ActionEvent actionEvent) {
 
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        handler = new DatabaseHandler();
     }
 }

@@ -21,6 +21,17 @@ public class Main extends Application {
 
 
     public static void main(String[] args) {
+        DatabaseHandler handler = DatabaseHandler.getInstance();
+        handler.createTable("Books",
+                "id varchar(200) primary key, \n" +
+                        "title varchar(200), \n" +
+                        "author varchar(200), \n" +
+                        "quantity varchar(200)");
+        handler.createTable("Students",
+                "id varchar(200) primary key, \n" +
+                        "name varchar(200), \n" +
+                        "grade varchar(200), \n" +
+                        "books varchar(200)");
         launch(args);
     }
 }
