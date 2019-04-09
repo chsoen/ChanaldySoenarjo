@@ -1,11 +1,10 @@
 package UI.Controllers;
 
-import Database.DatabaseHandler;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -14,6 +13,9 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class MainWindow implements Initializable {
+
+    public TableView tableStudent;
+    public TableView tableBook;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -32,11 +34,11 @@ public class MainWindow implements Initializable {
         }
     }
 
-    public void showAddStudentWindow(ActionEvent actionEvent) {
+    public void showAddStudentWindow() {
         loadWindow("../Layouts/AddStudent.fxml", "AddStudent");
     }
 
-    public void showAddBookWindow(ActionEvent actionEvent) {
+    public void showAddBookWindow() {
         loadWindow("../Layouts/AddBook.fxml", "AddBook");
     }
 }

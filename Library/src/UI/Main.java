@@ -22,12 +22,12 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         DatabaseHandler handler = DatabaseHandler.getInstance();
-        handler.createTable("Books",
+        handler.createTable("BOOKS",
                 "id varchar(200) primary key, \n" +
                         "title varchar(200), \n" +
                         "author varchar(200), \n" +
                         "quantity varchar(200)");
-        handler.createTable("Students",
+        handler.createTable("STUDENTS",
                 "id varchar(200) primary key, \n" +
                         "name varchar(200), \n" +
                         "grade varchar(200), \n" +

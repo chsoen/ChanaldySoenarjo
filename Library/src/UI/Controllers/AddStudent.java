@@ -11,7 +11,8 @@ import java.util.ResourceBundle;
 public class AddStudent implements Initializable {
 
     public TextField studentName;
-    public DatabaseHandler handler;
+    public TextField studentGrade;
+    private DatabaseHandler handler;
 
     public void addStudent(ActionEvent actionEvent) {
 
@@ -19,6 +20,6 @@ public class AddStudent implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        handler = new DatabaseHandler();
+        handler = DatabaseHandler.getInstance();
     }
 }

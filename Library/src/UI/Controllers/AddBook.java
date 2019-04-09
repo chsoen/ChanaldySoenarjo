@@ -12,15 +12,35 @@ public class AddBook implements Initializable {
     public TextField bookTitle;
     public TextField bookAuthor;
     public TextField bookQuantity;
-    public DatabaseHandler handler;
+    private DatabaseHandler handler;
 
 
-    public void addBook(ActionEvent actionEvent) {
+    public void addBook() {
+        String title = bookTitle.getText();
+        String author = bookAuthor.getText();
+        String quantity = bookQuantity.getText();
+
+        boolean flag = title.isEmpty() || author.isEmpty() ||
+                quantity.isEmpty();
+
+        if (!flag) {
+            String st = "INSERT INTO MEMBER VALUES (" +
+                    "'" + title + "'" +
+                    "'" + author + "'" +
+                    "'" + quantity + "')";
+
+            if (handler.execAction(st)) {
+                System.out.println("Book added");
+            } else {
+                System.out.println("Book was not added");
+            }
+        }
+
 
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        handler = new DatabaseHandler();
+        handler = DatabaseHandler.getInstance();
     }
 }

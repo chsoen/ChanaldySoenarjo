@@ -53,10 +53,9 @@ public class DatabaseHandler {
             stmt.execute(qu);
             return true;
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error:" + e.getMessage(), "Error Occured", JOptionPane.ERROR_MESSAGE);
-            System.out.println("Exception at execQuery" + e.getLocalizedMessage());
+            JOptionPane.showMessageDialog(null, "Error:" + e.getMessage(), "Error Occurred", JOptionPane.ERROR_MESSAGE);
+            System.out.println("Exception at execQuery " + e.getLocalizedMessage());
             return false;
         }
-
     }
 }
