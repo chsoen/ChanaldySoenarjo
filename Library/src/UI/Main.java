@@ -23,15 +23,13 @@ public class Main extends Application {
     public static void main(String[] args) {
         DatabaseHandler handler = DatabaseHandler.getInstance();
         handler.createTable("BOOKS",
-                "id varchar(200) primary key, \n" +
                         "title varchar(200), \n" +
                         "author varchar(200), \n" +
-                        "quantity varchar(200)");
+                        "taken varchar(200)");
         handler.createTable("STUDENTS",
-                "id varchar(200) primary key, \n" +
                         "name varchar(200), \n" +
                         "grade varchar(200), \n" +
-                        "books varchar(200)");
+                        "book varchar(200)");
         launch(args);
     }
 }

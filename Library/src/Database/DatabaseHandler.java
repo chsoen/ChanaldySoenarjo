@@ -30,7 +30,7 @@ public class DatabaseHandler {
         }
     }
 
-    public void createTable(String TABLE_NAME, String paramenters) {
+    public void createTable(String TABLE_NAME, String parameters) {
         try {
             stmt = conn.createStatement();
             DatabaseMetaData dmn = conn.getMetaData();
@@ -38,7 +38,7 @@ public class DatabaseHandler {
             if (tables.next()) {
                 System.out.println("Table " + TABLE_NAME + " already exists");
             } else {
-                String statement = "CREATE TABLE " + TABLE_NAME + "(" + paramenters + ")";
+                String statement = "CREATE TABLE " + TABLE_NAME + "(" + parameters + ")";
                 System.out.println(statement);
                 stmt.execute(statement);
             }
@@ -54,7 +54,7 @@ public class DatabaseHandler {
             return true;
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Error:" + e.getMessage(), "Error Occurred", JOptionPane.ERROR_MESSAGE);
-            System.out.println("Exception at execQuery " + e.getLocalizedMessage());
+            System.out.println("Exception at execAction: " + e.getLocalizedMessage());
             return false;
         }
     }

@@ -1,7 +1,6 @@
 package UI.Controllers;
 
 import Database.DatabaseHandler;
-import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
 
@@ -14,8 +13,24 @@ public class AddStudent implements Initializable {
     public TextField studentGrade;
     private DatabaseHandler handler;
 
-    public void addStudent(ActionEvent actionEvent) {
+    public void addStudent() {
+        String name = studentName.getText();
+        String grade = studentGrade.getText();
 
+        boolean flag = name.isEmpty() || grade.isEmpty();
+
+        if (!flag) {
+            String st = "INSERT INTO STUDENTS VALUES (" +
+                    "'" + name + "'," +
+                    "'" + grade + "'," +
+                    "'" + "" + "')";
+
+            if (handler.execAction(st)) {
+                System.out.println("Student added");
+            } else {
+                System.out.println("Student was not added");
+            }
+        }
     }
 
     @Override

@@ -1,9 +1,11 @@
 package UI.Controllers;
 
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -20,6 +22,7 @@ public class MainWindow implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         System.out.println("MainWindow initialized");
+
     }
 
     private void loadWindow(String location, String title) {
@@ -40,5 +43,9 @@ public class MainWindow implements Initializable {
 
     public void showAddBookWindow() {
         loadWindow("../Layouts/AddBook.fxml", "AddBook");
+    }
+
+    private void initicol() {
+        ObservableList<TableColumn> columns = tableStudent.getColumns();
     }
 }

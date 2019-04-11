@@ -1,7 +1,6 @@
 package UI.Controllers;
 
 import Database.DatabaseHandler;
-import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
 
@@ -11,23 +10,20 @@ import java.util.ResourceBundle;
 public class AddBook implements Initializable {
     public TextField bookTitle;
     public TextField bookAuthor;
-    public TextField bookQuantity;
     private DatabaseHandler handler;
 
 
     public void addBook() {
         String title = bookTitle.getText();
         String author = bookAuthor.getText();
-        String quantity = bookQuantity.getText();
 
-        boolean flag = title.isEmpty() || author.isEmpty() ||
-                quantity.isEmpty();
+        boolean flag = title.isEmpty() || author.isEmpty();
 
         if (!flag) {
-            String st = "INSERT INTO MEMBER VALUES (" +
-                    "'" + title + "'" +
-                    "'" + author + "'" +
-                    "'" + quantity + "')";
+            String st = "INSERT INTO BOOKS VALUES (" +
+                    "'" + title + "'," +
+                    "'" + author + "'," +
+                    "'" + false + "')";
 
             if (handler.execAction(st)) {
                 System.out.println("Book added");
@@ -35,8 +31,6 @@ public class AddBook implements Initializable {
                 System.out.println("Book was not added");
             }
         }
-
-
     }
 
     @Override
