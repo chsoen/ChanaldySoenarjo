@@ -1,6 +1,7 @@
 package Database;
 
 import javax.swing.*;
+import javax.xml.transform.Result;
 import java.sql.*;
 
 public class DatabaseHandler {
@@ -57,5 +58,17 @@ public class DatabaseHandler {
             System.out.println("Exception at execAction: " + e.getLocalizedMessage());
             return false;
         }
+    }
+
+    public ResultSet execQuery(String query) {
+        ResultSet resultSet;
+        try{
+            stmt = conn.createStatement();
+            resultSet = stmt.executeQuery((query));
+        } catch (SQLException e) {
+            System.out.println("Exception at Execute query");
+            return null;
+        }
+        return resultSet;
     }
 }
