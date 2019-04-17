@@ -15,7 +15,7 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class ShowStudents implements Initializable {
-    public ObservableList<Student> students = FXCollections.observableArrayList();
+    private ObservableList<Student> students = FXCollections.observableArrayList();
     public TableView tableStudents;
     public TableColumn nameCol;
     public TableColumn gradeCol;
@@ -23,9 +23,8 @@ public class ShowStudents implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        System.out.println("init");
         initiCol();
-        try{
+        try {
             loadData();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -46,14 +45,15 @@ public class ShowStudents implements Initializable {
         public String getName() {
             return name.get();
         }
+
         public String getGrade() {
             return grade.get();
         }
+
         public String getBook() {
             return book.get();
         }
     }
-
 
 
     private void initiCol() {
@@ -63,17 +63,15 @@ public class ShowStudents implements Initializable {
     }
 
     private void loadData() throws SQLException {
-        System.out.println("load data");
         DatabaseHandler handler = DatabaseHandler.getInstance();
         String qu = "SELECT * FROM STUDENTS";
         ResultSet rs = handler.execQuery(qu);
-        while(rs.next()) {
+        while (rs.next()) {
             String name = rs.getString("name");
             String grade = rs.getString("grade");
             String book = rs.getString("book");
-            System.out.println(name);
 
-            students.add(new Student(name,grade,book));
+            students.add(new Student(name, grade, book));
         }
         tableStudents.getItems().setAll(students);
     }

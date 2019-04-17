@@ -45,4 +45,8 @@ public class MainWindow implements Initializable {
     public void showShowStudentsWindow(ActionEvent actionEvent) {
         loadWindow("../Layouts/ShowStudents.fxml", "ShowStudents");
     }
+
+    public void showShowBooksWindow(ActionEvent actionEvent) {
+        loadWindow("../Layouts/ShowBooks.fxml", "ShowBooks");
+    }
 }
