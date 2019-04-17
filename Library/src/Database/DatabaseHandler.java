@@ -1,7 +1,6 @@
 package Database;
 
 import javax.swing.*;
-import javax.xml.transform.Result;
 import java.sql.*;
 
 public class DatabaseHandler {
@@ -11,7 +10,7 @@ public class DatabaseHandler {
     private static Connection conn = null;
     private static Statement stmt = null;
 
-    public DatabaseHandler() {
+    private DatabaseHandler() {
         createConnection();
     }
 
@@ -62,7 +61,7 @@ public class DatabaseHandler {
 
     public ResultSet execQuery(String query) {
         ResultSet resultSet;
-        try{
+        try {
             stmt = conn.createStatement();
             resultSet = stmt.executeQuery((query));
         } catch (SQLException e) {

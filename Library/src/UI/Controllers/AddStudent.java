@@ -8,7 +8,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class AddStudent implements Initializable {
-
     public TextField studentName;
     public TextField studentGrade;
     private DatabaseHandler handler;
