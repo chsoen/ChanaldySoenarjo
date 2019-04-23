@@ -35,7 +35,6 @@ public class ReturnBook implements Initializable {
     public void initialize(URL location, ResourceBundle resources)  {
         handler = DatabaseHandler.getInstance();
         ObservableList<String> listStudents = FXCollections.observableArrayList();
-        ObservableList<String> listBooks = FXCollections.observableArrayList();
         try {
             ResultSet rs = handler.execQuery("SELECT name FROM STUDENTS");
             while (rs.next()) {

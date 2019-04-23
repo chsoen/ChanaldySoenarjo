@@ -17,7 +17,7 @@ public class TakeBook implements Initializable {
     public ChoiceBox<String> bookChoice;
     private DatabaseHandler handler;
 
-    public void takeBook(ActionEvent actionEvent) {
+    public void takeBook() {
         String studentSelected = studentChoice.getSelectionModel().getSelectedItem();
         String bookSelected = bookChoice.getSelectionModel().getSelectedItem();
         String book = "";
