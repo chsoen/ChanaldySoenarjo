@@ -49,4 +49,12 @@ public class MainWindow implements Initializable {
     public void showShowBooksWindow(ActionEvent actionEvent) {
         loadWindow("../Layouts/ShowBooks.fxml", "ShowBooks");
     }
+
+    public void showTakeBookWindow(ActionEvent actionEvent) {
+        loadWindow("../Layouts/TakeBook.fxml", "TakeBook");
+    }
+
+    public void showReturnBookWindow(ActionEvent actionEvent) {
+        loadWindow("../Layouts/ReturnBook.fxml", "ReturnBook");
+    }
 }

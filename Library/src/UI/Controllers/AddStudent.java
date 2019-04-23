@@ -22,7 +22,7 @@ public class AddStudent implements Initializable {
             String st = "INSERT INTO STUDENTS VALUES (" +
                     "'" + name + "'," +
                     "'" + grade + "'," +
-                    "'" + "" + "')";
+                    "'None')";
 
             if (handler.execAction(st)) {
                 System.out.println("Student added");

@@ -23,7 +23,7 @@ public class AddBook implements Initializable {
             String st = "INSERT INTO BOOKS VALUES (" +
                     "'" + title + "'," +
                     "'" + author + "'," +
-                    "'" + false + "')";
+                    "'No one')";
 
             if (handler.execAction(st)) {
                 System.out.println("Book added");
