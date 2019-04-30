@@ -1,0 +1,15 @@
+.button {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 11px;
+    -fx-border-color: #c1c1c1;
+    -fx-border-radius: 10px;
+}
+
+.button:hover {
+    -fx-background-color: #7cffcd;
+}
+
+.table-column {
+    -fx-background-color: rgba(48, 255, 166, 0.34);
+    -fx-border-color: rgba(156, 229, 255, 0.64);
+}
