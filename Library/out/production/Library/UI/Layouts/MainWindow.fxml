@@ -3,7 +3,6 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
@@ -12,9 +11,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controllers.MainWindow">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" stylesheets="@CSS/Main.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controllers.MainWindow">
     <right>
-        <VBox alignment="TOP_CENTER" spacing="10.0" BorderPane.alignment="CENTER">
+        <VBox alignment="TOP_CENTER" spacing="10.0">
             <Button contentDisplay="BOTTOM" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showAddStudentWindow" stylesheets="@CSS/Main.css" text="Add Student">
             <graphic>
                <ImageView fitHeight="56.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
@@ -22,7 +21,8 @@
                      <Image url="@Icons/add-student.png" />
                   </image>
                </ImageView>
-            </graphic></Button>
+            </graphic>
+         </Button>
             <Button contentDisplay="BOTTOM" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showAddBookWindow" stylesheets="@CSS/Main.css" text="Add Book">
             <VBox.margin>
                <Insets />
@@ -33,7 +33,8 @@
                      <Image url="@Icons/add-book.png" />
                   </image>
                </ImageView>
-            </graphic></Button>
+            </graphic>
+         </Button>
          <Button contentDisplay="BOTTOM" layoutX="27.0" layoutY="125.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showTakeBookWindow" stylesheets="@CSS/Main.css" text="Take Book">
             <graphic>
                <ImageView fitHeight="70.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
@@ -41,7 +42,8 @@
                      <Image url="@Icons/take-book.png" />
                   </image>
                </ImageView>
-            </graphic></Button>
+            </graphic>
+         </Button>
          <Button contentDisplay="BOTTOM" layoutX="32.0" layoutY="160.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#showReturnBookWindow" stylesheets="@CSS/Main.css" text="Return Book">
             <graphic>
                <ImageView fitHeight="62.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
@@ -49,15 +51,16 @@
                      <Image url="@Icons/return-book.png" />
                   </image>
                </ImageView>
-            </graphic></Button>
+            </graphic>
+         </Button>
             <padding>
                 <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
             </padding>
         </VBox>
     </right>
    <center>
-      <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
-        <items>
+      <VBox>
+         <children>
             <VBox alignment="CENTER">
                <children>
                   <Label text="Student Table">
@@ -65,7 +68,7 @@
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <TableView fx:id="tableStudents" prefWidth="389.0" stylesheets="@CSS/Main.css">
+                  <TableView fx:id="tableStudents" stylesheets="@CSS/Main.css">
                      <columns>
                         <TableColumn fx:id="nameCol" prefWidth="75.0" text="Name" />
                         <TableColumn fx:id="gradeCol" prefWidth="75.0" text="Grade" />
@@ -84,7 +87,7 @@
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <TableView fx:id="tableBooks" prefWidth="389.0" stylesheets="@CSS/Main.css">
+                  <TableView fx:id="tableBooks" stylesheets="@CSS/Main.css">
                      <columns>
                         <TableColumn fx:id="titleCol" prefWidth="75.0" text="Title" />
                         <TableColumn fx:id="authorCol" prefWidth="75.0" text="Author" />
@@ -96,7 +99,7 @@
                   </TableView>
                </children>
             </VBox>
-        </items>
-      </SplitPane>
+         </children>
+      </VBox>
    </center>
 </BorderPane>
