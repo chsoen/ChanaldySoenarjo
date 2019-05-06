@@ -26,6 +26,8 @@ public class AddBook implements Initializable {
                     "'No one')";
 
             if (handler.execAction(st)) {
+                bookTitle.clear();
+                bookAuthor.clear();
                 System.out.println("Book added");
             } else {
                 System.out.println("Book was not added");

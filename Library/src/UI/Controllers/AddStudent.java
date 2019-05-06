@@ -25,6 +25,8 @@ public class AddStudent implements Initializable {
                     "'None')";
 
             if (handler.execAction(st)) {
+                studentName.clear();
+                studentGrade.clear();
                 System.out.println("Student added");
             } else {
                 System.out.println("Student was not added");
