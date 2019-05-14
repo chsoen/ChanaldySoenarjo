@@ -80,27 +80,28 @@
     <session id="-628395009">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="8" />
-          <entry key="project.open.time.0" value="2" />
+          <entry key="project.closed" value="11" />
+          <entry key="project.open.time.0" value="4" />
           <entry key="project.open.time.10" value="3" />
           <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.22" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="8" />
+          <entry key="project.opened" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="3" />
-          <entry key="fxml" value="13" />
-          <entry key="java" value="29" />
+          <entry key="fxml" value="15" />
+          <entry key="java" value="31" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="3" />
-          <entry key="JAVA" value="29" />
-          <entry key="XML" value="13" />
+          <entry key="JAVA" value="31" />
+          <entry key="XML" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -127,8 +128,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/UI/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="6" lean-forward="true" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+            <state relative-caret-position="87">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -136,8 +140,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/UI/Controllers/MainWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="47" column="4" lean-forward="true" selection-start-line="47" selection-start-column="4" selection-end-line="64" selection-end-column="5" />
+            <state relative-caret-position="379">
+              <caret line="155" column="38" lean-forward="true" selection-start-line="155" selection-start-column="38" selection-end-line="155" selection-end-column="38" />
               <folding>
                 <element signature="method#initialize#0;class#MainWindow#0" />
                 <element signature="class#Book#0;class#MainWindow#0" />
@@ -146,6 +150,8 @@
                 <element signature="method#Student#0;class#Student#0;class#MainWindow#0" />
                 <element signature="method#initiCol#0;class#MainWindow#0" />
                 <element signature="method#loadData#0;class#MainWindow#0" />
+                <element signature="e#5047#5048#0" expanded="true" />
+                <element signature="e#5117#5118#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -232,7 +238,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -249,12 +255,6 @@
               <item name="Library" type="b2602c69:ProjectViewProjectNode" />
               <item name="Library" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Database" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Library" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Library" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="UI" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -264,11 +264,18 @@
               <item name="UI" type="462c0819:PsiDirectoryNode" />
               <item name="Controllers" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Library" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Library" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="UI" type="462c0819:PsiDirectoryNode" />
+              <item name="Layouts" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -281,7 +288,7 @@
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556816218183" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557851284349" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -420,16 +427,20 @@
       <workItem from="1557505879878" duration="28000" />
       <workItem from="1557505912497" duration="2000" />
       <workItem from="1557507284689" duration="297000" />
+      <workItem from="1557849103591" duration="479000" />
+      <workItem from="1557851252673" duration="38000" />
+      <workItem from="1557853056139" duration="44000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54906000" />
+    <option name="totallyTimeSpent" value="55467000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="5" y="9" width="1079" height="813" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.23454367" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.24926399" />
       <window_info id="Structure" order="1" weight="0.14072494" />
       <window_info id="Favorites" order="2" weight="0.14712153" />
       <window_info id="Designer" order="3" />
@@ -535,20 +546,20 @@
     <entry file="das://91655856-bcaa-4580-b38c-effe9e1f39e2/schema/APP/table/BOOKS" />
     <entry file="das://91655856-bcaa-4580-b38c-effe9e1f39e2/schema/APP/table/STUDENTS" />
     <entry file="file://$PROJECT_DIR$/src/UI/Layouts/TakeBook.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
       <provider editor-type-id="text-editor">
         <state relative-caret-position="532">
           <caret line="34" column="24" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/UI/Layouts/ReturnBook.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="28" column="26" lean-forward="true" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/UI/Layouts/ShowStudents.fxml" />
     <entry file="file://$PROJECT_DIR$/src/UI/Controllers/ShowStudents.java" />
@@ -566,13 +577,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/Controllers/ReturnBook.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="28" column="47" lean-forward="true" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/UI/Controllers/TakeBook.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-351">
@@ -581,30 +585,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/UI/Layouts/AddBook.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
       <provider editor-type-id="text-editor">
         <state relative-caret-position="714">
           <caret line="42" column="23" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/Layouts/AddStudent.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/UI/Layouts/CSS/tableStyle.css" />
-    <entry file="file://$PROJECT_DIR$/src/UI/Layouts/MainWindow.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="91" column="31" lean-forward="true" selection-start-line="91" selection-start-column="31" selection-end-line="91" selection-end-column="31" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/UI/Controllers/AddBook.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -616,9 +604,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="28" column="37" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -629,17 +614,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/javafx-src.zip!/javafx/event/EventHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="44" column="9" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/Controllers/ReturnBook.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="28" column="47" lean-forward="true" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/Layouts/MainWindow.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="91" column="26" lean-forward="true" selection-start-line="91" selection-start-column="26" selection-end-line="91" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/Layouts/AddStudent.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/UI/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="6" lean-forward="true" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+        <state relative-caret-position="87">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/UI/Controllers/MainWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="47" column="4" lean-forward="true" selection-start-line="47" selection-start-column="4" selection-end-line="64" selection-end-column="5" />
+        <state relative-caret-position="379">
+          <caret line="155" column="38" lean-forward="true" selection-start-line="155" selection-start-column="38" selection-end-line="155" selection-end-column="38" />
           <folding>
             <element signature="method#initialize#0;class#MainWindow#0" />
             <element signature="class#Book#0;class#MainWindow#0" />
@@ -648,6 +666,8 @@
             <element signature="method#Student#0;class#Student#0;class#MainWindow#0" />
             <element signature="method#initiCol#0;class#MainWindow#0" />
             <element signature="method#loadData#0;class#MainWindow#0" />
+            <element signature="e#5047#5048#0" expanded="true" />
+            <element signature="e#5117#5118#0" expanded="true" />
           </folding>
         </state>
       </provider>
