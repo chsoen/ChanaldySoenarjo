@@ -8,6 +8,5 @@ public class Login extends Controller {
 
     public void login(ActionEvent actionEvent) {
         loadWindow("../Layouts/Chatroom.fxml", "Chatroom");
-
     }
 }
