@@ -1,11 +1,11 @@
 package Networking;
 
+import Networking.Network.PacketMessage;
 import com.esotericsoftware.kryonet.Connection;
 import com.esotericsoftware.kryonet.Listener;
 import com.esotericsoftware.kryonet.Server;
 
 import java.io.IOException;
-import java.util.Date;
 
 public class ServerProgram {
     static Server server;
@@ -25,7 +25,10 @@ public class ServerProgram {
 
             @Override
             public void received(Connection connection, Object o) {
-
+                if (o instanceof PacketMessage) {
+                    PacketMessage packetMessage = (PacketMessage) o;
+                    System.out.println(packetMessage.text);
+                }
             }
 
             @Override
@@ -39,8 +42,8 @@ public class ServerProgram {
     }
 
     private static void sendMessage(Connection c) {
-        Network.PacketMessage packetMessage = new Network.PacketMessage();
-        packetMessage.message = "Hello client";
+        PacketMessage packetMessage = new PacketMessage();
+        packetMessage.text = "Hello client";
         c.sendTCP(packetMessage);
         //c.sendUDP(packetMessage);
     }

@@ -15,7 +15,7 @@
                   <VBox />
                </content>
             </ScrollPane>
-            <TextField>
+            <TextField fx:id="message" onAction="#onEnter">
                <VBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </VBox.margin>

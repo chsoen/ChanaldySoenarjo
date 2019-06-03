@@ -11,7 +11,7 @@ public class Network {
         kryo.register(PacketMessage.class);
     }
 
-    static public class PacketMessage {
-        String message;
+    public static class PacketMessage {
+        String text;
     }
 }
