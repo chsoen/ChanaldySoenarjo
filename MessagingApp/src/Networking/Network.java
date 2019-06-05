@@ -8,10 +8,21 @@ public class Network {
 
     public static void register(EndPoint endPoint) {
         Kryo kryo = endPoint.getKryo();
-        kryo.register(PacketMessage.class);
+        kryo.register(ServerMessage.class);
+        kryo.register(UserMessage.class);
     }
 
-    public static class PacketMessage {
+    public static class ServerMessage {
         String text;
+    }
+
+    public static class UserMessage {
+        String user;
+        String text;
+
+        @Override
+        public String toString() {
+            return user + ": " + text;
+        }
     }
 }

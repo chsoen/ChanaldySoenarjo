@@ -1,6 +1,7 @@
 package Networking;
 
-import Networking.Network.PacketMessage;
+import Networking.Network.ServerMessage;
+import Networking.Network.UserMessage;
 import com.esotericsoftware.kryonet.Connection;
 import com.esotericsoftware.kryonet.Listener;
 import com.esotericsoftware.kryonet.Server;
@@ -8,7 +9,7 @@ import com.esotericsoftware.kryonet.Server;
 import java.io.IOException;
 
 public class ServerProgram {
-    static Server server;
+    private static Server server;
 
     public static void main(String[] args) throws IOException {
         System.out.println("Creating Server");
@@ -25,9 +26,10 @@ public class ServerProgram {
 
             @Override
             public void received(Connection connection, Object o) {
-                if (o instanceof PacketMessage) {
-                    PacketMessage packetMessage = (PacketMessage) o;
-                    System.out.println(packetMessage.text);
+                if (o instanceof UserMessage) {
+                    UserMessage userMessage = (UserMessage) o;
+                    System.out.println(userMessage);
+                    connection.sendTCP(userMessage);
                 }
             }
 
@@ -42,9 +44,8 @@ public class ServerProgram {
     }
 
     private static void sendMessage(Connection c) {
-        PacketMessage packetMessage = new PacketMessage();
-        packetMessage.text = "Hello client";
-        c.sendTCP(packetMessage);
-        //c.sendUDP(packetMessage);
+        ServerMessage serverMessage = new ServerMessage();
+        serverMessage.text = "Hello client";
+        c.sendTCP(serverMessage);
     }
 }
