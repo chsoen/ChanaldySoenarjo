@@ -28,8 +28,8 @@ public class ServerProgram {
             public void received(Connection connection, Object o) {
                 if (o instanceof UserMessage) {
                     UserMessage userMessage = (UserMessage) o;
+                    server.sendToAllTCP(userMessage);
                     System.out.println(userMessage);
-                    connection.sendTCP(userMessage);
                 }
             }
 

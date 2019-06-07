@@ -18,6 +18,7 @@ public class Login {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../Layouts/Chatroom.fxml"));
             Parent parent = loader.load();
             Chatroom chatroom = loader.getController();
+            chatroom.setClientProgram();
             chatroom.setUser(txtfldUsername.getText());
             Stage stage = new Stage(StageStyle.DECORATED);
             stage.setTitle("Chatroom");

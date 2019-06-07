@@ -24,5 +24,13 @@ public class Network {
         public String toString() {
             return user + ": " + text;
         }
+
+        public String getUser() {
+            return user;
+        }
+
+        public String getText() {
+            return text;
+        }
     }
 }

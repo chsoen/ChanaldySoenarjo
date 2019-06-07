@@ -2,6 +2,7 @@ package Networking;
 
 import Networking.Network.ServerMessage;
 import Networking.Network.UserMessage;
+import UI.Controllers.Chatroom;
 import com.esotericsoftware.kryonet.Client;
 import com.esotericsoftware.kryonet.Connection;
 import com.esotericsoftware.kryonet.Listener;
@@ -29,6 +30,7 @@ public class ClientProgram {
                 }
                 if (o instanceof UserMessage) {
                     UserMessage userMessage = (UserMessage) o;
+                    Chatroom.displayMessage(userMessage);
                     System.out.println(userMessage);
                 }
             }
