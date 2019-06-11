@@ -1,34 +1,35 @@
 package UI.Controllers;
 
 import Networking.ClientProgram;
-import Networking.Network;
 import javafx.application.Platform;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ListView;
+import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class Chatroom implements Initializable {
     public TextField message;
-    public static ListView<String> messagesList;
-    public ObservableList<String> messages = FXCollections.observableArrayList();
+    public ArrayList<Label> messageList = new ArrayList<>();
+    public ScrollPane chat;
     private String userName;
     private ClientProgram clientProgram;
+    private final VBox messageBox = new VBox(5);
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         Platform.runLater(() -> System.out.println(userName));
-        messagesList.setItems(messages);
+
     }
 
     public void onEnter(ActionEvent actionEvent) {
-        clientProgram.sendMessage(userName,message.getText());
+        clientProgram.sendMessage(userName, message.getText());
         message.clear();
     }
 
@@ -44,11 +45,14 @@ public class Chatroom implements Initializable {
         }
     }
 
-    public static void displayMessage(Network.UserMessage userMessage) {
-        messagesList.getItems().add(String.valueOf(userMessage));
-        System.out.println("------------Messages-----------");
-        for (String m : messagesList.getItems()) {
-            System.out.println(m);
-        }
+    //https://stackoverflow.com/questions/41851501/how-to-design-chatbox-gui-using-javafx
+
+    public void displayMessage(String message) {
+        chat.setContent(messageBox);
+        messageBox.getChildren().add(new Label(message));
+
+
     }
+
+
 }

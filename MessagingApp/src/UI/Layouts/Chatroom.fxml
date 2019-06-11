@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
@@ -10,7 +10,7 @@
    <center>
       <VBox BorderPane.alignment="CENTER">
          <children>
-            <ListView fx:id="messagesList" />
+            <ScrollPane fx:id="chat" />
             <TextField fx:id="message" onAction="#onEnter">
                <VBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />

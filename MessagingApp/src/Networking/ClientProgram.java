@@ -1,5 +1,6 @@
 package Networking;
 
+import Model.ChatroomList;
 import Networking.Network.ServerMessage;
 import Networking.Network.UserMessage;
 import UI.Controllers.Chatroom;
@@ -30,7 +31,10 @@ public class ClientProgram {
                 }
                 if (o instanceof UserMessage) {
                     UserMessage userMessage = (UserMessage) o;
-                    Chatroom.displayMessage(userMessage);
+                    for (Chatroom chatroom : ChatroomList.chatroomList){
+                        chatroom.displayMessage(String.valueOf(userMessage));
+                    }
+
                     System.out.println(userMessage);
                 }
             }

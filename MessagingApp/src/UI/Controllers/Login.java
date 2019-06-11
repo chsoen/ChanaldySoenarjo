@@ -20,6 +20,8 @@ public class Login {
             Chatroom chatroom = loader.getController();
             chatroom.setClientProgram();
             chatroom.setUser(txtfldUsername.getText());
+
+
             Stage stage = new Stage(StageStyle.DECORATED);
             stage.setTitle("Chatroom");
             stage.setScene(new Scene(parent));
