@@ -1,5 +1,6 @@
 package UI.Controllers;
 
+import Model.ChatroomList;
 import Networking.ClientProgram;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -8,23 +9,36 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class Chatroom implements Initializable {
+    private final VBox messageBox = new VBox(5);
     public TextField message;
-    public ArrayList<Label> messageList = new ArrayList<>();
     public ScrollPane chat;
     private String userName;
     private ClientProgram clientProgram;
-    private final VBox messageBox = new VBox(5);
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        Platform.runLater(() -> System.out.println(userName));
+        Platform.runLater(() -> {
+            System.out.println(userName);
+
+            /*
+            https://stackoverflow.com/q/26619566
+            Runs ChatroomList.remove method when stage closes
+             */
+            Stage stage = (Stage) chat.getScene().getWindow();
+            stage.setOnCloseRequest(event -> {
+                ChatroomList.remove(this);
+
+            });
+        });
+
 
     }
 
@@ -45,13 +59,19 @@ public class Chatroom implements Initializable {
         }
     }
 
-    //https://stackoverflow.com/questions/41851501/how-to-design-chatbox-gui-using-javafx
+    /*
+    https://stackoverflow.com/a/41851855
+    Scrollpane chat sets its content to VBox messageBox and a label is created in messageBox
 
+    https://stackoverflow.com/a/17851019
+    Updates the fx using Platform.runlater method
+     */
     public void displayMessage(String message) {
-        chat.setContent(messageBox);
-        messageBox.getChildren().add(new Label(message));
-
-
+        Platform.runLater(() -> {
+                    chat.setContent(messageBox);
+                    messageBox.getChildren().add(new Label(message));
+                }
+        );
     }
 
 

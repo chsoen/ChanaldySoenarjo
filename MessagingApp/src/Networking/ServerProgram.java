@@ -1,6 +1,8 @@
 package Networking;
 
+import DatabaseHandler.DatabaseHandler;
 import Networking.Network.ServerMessage;
+import Networking.Network.UserDisconnect;
 import Networking.Network.UserMessage;
 import com.esotericsoftware.kryonet.Connection;
 import com.esotericsoftware.kryonet.Listener;
@@ -12,6 +14,9 @@ public class ServerProgram {
     private static Server server;
 
     public static void main(String[] args) throws IOException {
+        DatabaseHandler handler = DatabaseHandler.getInstance();
+        handler.createTable();
+
         System.out.println("Creating Server");
         server = new Server();
         server.bind(Network.port);
@@ -36,16 +41,16 @@ public class ServerProgram {
             @Override
             public void connected(Connection c) {
                 System.out.println("Received a connection from " + c.getRemoteAddressTCP().getHostString());
-                sendMessage(c);
+                sendMessage(c, "Welcome to the Chatroom!");
             }
         });
 
         System.out.println("Server is operational!");
     }
 
-    private static void sendMessage(Connection c) {
+    private static void sendMessage(Connection c, String message) {
         ServerMessage serverMessage = new ServerMessage();
-        serverMessage.text = "Hello client";
+        serverMessage.message = message;
         c.sendTCP(serverMessage);
     }
 }

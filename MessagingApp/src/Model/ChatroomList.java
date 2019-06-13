@@ -10,4 +10,8 @@ public class ChatroomList {
     public static void add(Chatroom chatroom) {
         chatroomList.add(chatroom);
     }
+
+    public static void remove(Chatroom chatroom) {
+        chatroomList.remove(chatroom);
+    }
 }

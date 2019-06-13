@@ -1,5 +1,6 @@
 package UI.Controllers;
 
+import Model.ChatroomList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -20,7 +21,7 @@ public class Login {
             Chatroom chatroom = loader.getController();
             chatroom.setClientProgram();
             chatroom.setUser(txtfldUsername.getText());
-
+            ChatroomList.add(chatroom);
 
             Stage stage = new Stage(StageStyle.DECORATED);
             stage.setTitle("Chatroom");

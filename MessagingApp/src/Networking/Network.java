@@ -13,7 +13,12 @@ public class Network {
     }
 
     public static class ServerMessage {
-        String text;
+        String message;
+
+        @Override
+        public String toString() {
+            return message;
+        }
     }
 
     public static class UserMessage {
@@ -31,6 +36,15 @@ public class Network {
 
         public String getText() {
             return text;
+        }
+    }
+
+    public static class UserDisconnect {
+        String user;
+
+        @Override
+        public String toString() {
+            return user;
         }
     }
 }

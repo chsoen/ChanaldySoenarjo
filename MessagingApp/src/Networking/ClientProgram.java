@@ -25,8 +25,11 @@ public class ClientProgram {
             @Override
             public void received(Connection c, Object o) {
                 if (o instanceof ServerMessage) {
-                    ServerMessage packet = (ServerMessage) o;
-                    System.out.println("received a text from the host: " + packet.text + "\n");
+                    ServerMessage serverMessage = (ServerMessage) o;
+                    for (Chatroom chatroom : ChatroomList.chatroomList){
+                        chatroom.displayMessage(String.valueOf(serverMessage));
+                    }
+                    System.out.println("received a text from the host: " + serverMessage.message + "\n");
 
                 }
                 if (o instanceof UserMessage) {
@@ -49,4 +52,5 @@ public class ClientProgram {
         userMessage.text = message;
         client.sendTCP(userMessage);
     }
+
 }
