@@ -31,7 +31,7 @@ public class DatabaseHandler {
     }
 
     public void createTable() {
-        String TABLE_NAME = "MEMBER";
+        String TABLE_NAME = "MESSAGES";
         try {
             stmt = conn.createStatement();
             DatabaseMetaData dmn = conn.getMetaData();
@@ -40,10 +40,7 @@ public class DatabaseHandler {
                 System.out.println("Table " + TABLE_NAME + " already exists");
             } else {
                 String statement = "CREATE TABLE " + TABLE_NAME + "("
-                        + "id varchar(200) primary key, \n"
-                        + "name varchar (200), \n"
-                        + "email varchar (200), \n"
-                        + "nickName varchar (200))";
+                        + "messages varchar (200))";
                 System.out.println(statement);
                 stmt.execute(statement);
             }

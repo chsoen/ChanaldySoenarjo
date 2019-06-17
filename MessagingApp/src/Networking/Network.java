@@ -12,7 +12,7 @@ public class Network {
         kryo.register(UserMessage.class);
     }
 
-    public static class ServerMessage {
+    static class Message {
         String message;
 
         @Override
@@ -21,7 +21,9 @@ public class Network {
         }
     }
 
-    public static class UserMessage {
+    public static class ServerMessage extends Message {}
+
+    public static class UserMessage extends Message{
         String user;
         String text;
 
@@ -36,15 +38,6 @@ public class Network {
 
         public String getText() {
             return text;
-        }
-    }
-
-    public static class UserDisconnect {
-        String user;
-
-        @Override
-        public String toString() {
-            return user;
         }
     }
 }

@@ -20,7 +20,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <TextField fx:id="txtfldUsername" GridPane.columnIndex="1" />
+            <TextField fx:id="txtfldUsername" onAction="#login" GridPane.columnIndex="1" />
             <Button mnemonicParsing="false" onAction="#login" text="Login" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <Label text="Username:" />
          </children>

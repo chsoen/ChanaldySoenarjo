@@ -16,15 +16,16 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class Chatroom implements Initializable {
-    private final VBox messageBox = new VBox(5);
+    public VBox messageBox;
     public TextField message;
-    public ScrollPane chat;
     private String userName;
     private ClientProgram clientProgram;
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        ChatroomList.add(this);
+
         Platform.runLater(() -> {
             System.out.println(userName);
 
@@ -32,11 +33,8 @@ public class Chatroom implements Initializable {
             https://stackoverflow.com/q/26619566
             Runs ChatroomList.remove method when stage closes
              */
-            Stage stage = (Stage) chat.getScene().getWindow();
-            stage.setOnCloseRequest(event -> {
-                ChatroomList.remove(this);
-
-            });
+            Stage stage = (Stage) messageBox.getScene().getWindow();
+            stage.setOnCloseRequest(event -> ChatroomList.remove(this));
         });
 
 
@@ -51,11 +49,13 @@ public class Chatroom implements Initializable {
         userName = user;
     }
 
-    void setClientProgram() {
+    boolean setClientProgram() {
         try {
             clientProgram = new ClientProgram();
+            return true;
         } catch (IOException e) {
             e.printStackTrace();
+            return false;
         }
     }
 
@@ -67,11 +67,9 @@ public class Chatroom implements Initializable {
     Updates the fx using Platform.runlater method
      */
     public void displayMessage(String message) {
-        Platform.runLater(() -> {
-                    chat.setContent(messageBox);
-                    messageBox.getChildren().add(new Label(message));
-                }
-        );
+        Label label = new Label(message);
+        label.setWrapText(true);
+        Platform.runLater(() -> messageBox.getChildren().add(label));
     }
 
 

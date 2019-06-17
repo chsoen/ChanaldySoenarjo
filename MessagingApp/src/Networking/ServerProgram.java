@@ -2,7 +2,6 @@ package Networking;
 
 import DatabaseHandler.DatabaseHandler;
 import Networking.Network.ServerMessage;
-import Networking.Network.UserDisconnect;
 import Networking.Network.UserMessage;
 import com.esotericsoftware.kryonet.Connection;
 import com.esotericsoftware.kryonet.Listener;
@@ -33,6 +32,9 @@ public class ServerProgram {
             public void received(Connection connection, Object o) {
                 if (o instanceof UserMessage) {
                     UserMessage userMessage = (UserMessage) o;
+                    handler.execAction("INSERT INTO MESSAGES (MESSAGES)\n" +
+                            "VALUES(" + userMessage.getUser() + ": " + userMessage.getText() +
+                            ")");
                     server.sendToAllTCP(userMessage);
                     System.out.println(userMessage);
                 }
