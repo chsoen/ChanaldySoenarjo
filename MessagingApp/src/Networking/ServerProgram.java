@@ -8,6 +8,8 @@ import com.esotericsoftware.kryonet.Listener;
 import com.esotericsoftware.kryonet.Server;
 
 import java.io.IOException;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 
 public class ServerProgram {
     private static Server server;
@@ -32,9 +34,9 @@ public class ServerProgram {
             public void received(Connection connection, Object o) {
                 if (o instanceof UserMessage) {
                     UserMessage userMessage = (UserMessage) o;
-                    handler.execAction("INSERT INTO MESSAGES (MESSAGES)\n" +
-                            "VALUES(" + userMessage.getUser() + ": " + userMessage.getText() +
-                            ")");
+                    handler.execAction("INSERT INTO MESSAGES\n" +
+                            "VALUES (\'" + userMessage.getUser() + ": " + userMessage.getText() +
+                            "\')");
                     server.sendToAllTCP(userMessage);
                     System.out.println(userMessage);
                 }
@@ -43,6 +45,24 @@ public class ServerProgram {
             @Override
             public void connected(Connection c) {
                 System.out.println("Received a connection from " + c.getRemoteAddressTCP().getHostString());
+
+                ArrayList<String> list = new ArrayList<>();
+
+                try {
+                    ResultSet rs = handler.execQuery("SELECT * FROM MESSAGES");
+                    while (rs.next()) {
+                        String message = rs.getString("MESSAGES");
+                        list.add(message);
+                    }
+                }
+                catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                for (int i = 0; i < list.size(); i++) {
+                    sendMessage(c, list.get(i));
+                }
+
                 sendMessage(c, "Welcome to the Chatroom!");
             }
         });

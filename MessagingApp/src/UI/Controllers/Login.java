@@ -22,7 +22,11 @@ public class Login {
 
             if (chatroom.setClientProgram()) {
                 chatroom.setUser(txtfldUsername.getText());
-                Stage stage = new Stage(StageStyle.DECORATED);
+
+                Stage stage = (Stage) txtfldUsername.getScene().getWindow();
+                stage.close();
+
+                stage = new Stage(StageStyle.DECORATED);
                 stage.setTitle("Chatroom");
                 stage.setScene(new Scene(parent));
                 stage.show();
@@ -31,9 +35,6 @@ public class Login {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        Stage stage = (Stage) txtfldUsername.getScene().getWindow();
-        stage.close();
     }
 
 }

@@ -29,7 +29,7 @@ public class ClientProgram {
                     for (Chatroom chatroom : ChatroomList.chatroomList){
                         chatroom.displayMessage(String.valueOf(serverMessage));
                     }
-                    System.out.println("received a text from the host: " + serverMessage.message + "\n");
+                    System.out.println(serverMessage.message + "\n");
 
                 }
                 if (o instanceof UserMessage) {
