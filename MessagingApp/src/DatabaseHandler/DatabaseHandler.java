@@ -7,7 +7,7 @@ public class DatabaseHandler {
     private static DatabaseHandler handler = null;
 
     private final String DB_url = "jdbc:derby:database/forum;create=true";
-    private static Connection conn = null;
+    public static Connection conn = null;
     private static Statement stmt = null;
 
     public DatabaseHandler() {

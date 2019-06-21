@@ -8,7 +8,9 @@ import com.esotericsoftware.kryonet.Listener;
 import com.esotericsoftware.kryonet.Server;
 
 import java.io.IOException;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class ServerProgram {
@@ -34,9 +36,12 @@ public class ServerProgram {
             public void received(Connection connection, Object o) {
                 if (o instanceof UserMessage) {
                     UserMessage userMessage = (UserMessage) o;
-                    handler.execAction("INSERT INTO MESSAGES\n" +
-                            "VALUES (\'" + userMessage.getUser() + ": " + userMessage.getText() +
-                            "\')");
+                    try {
+                        PreparedStatement ps = handler.conn.prepareStatement("INSERT INTO MESSAGES VALUES ('" +  userMessage.getUser() + ": " + userMessage.getText() + "')");
+                        ps.execute();
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
                     server.sendToAllTCP(userMessage);
                     System.out.println(userMessage);
                 }
@@ -59,8 +64,8 @@ public class ServerProgram {
                     e.printStackTrace();
                 }
 
-                for (int i = 0; i < list.size(); i++) {
-                    sendMessage(c, list.get(i));
+                for (String message : list) {
+                    sendMessage(c, message);
                 }
 
                 sendMessage(c, "Welcome to the Chatroom!");
