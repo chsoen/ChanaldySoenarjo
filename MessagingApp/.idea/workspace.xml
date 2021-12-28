@@ -1,7 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="MessagingApp:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdf1d327-c244-408d-b726-9aa7c320bbb3" name="Default Changelist" comment="Added lib folder" />
+    <list default="true" id="cdf1d327-c244-408d-b726-9aa7c320bbb3" name="Default Changelist" comment="Added lib folder">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/MessagingApp_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/jfxrt.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MessagingApp/DatabaseHandler/DatabaseHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MessagingApp/Model/ChatroomList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MessagingApp/Networking/ClientProgram$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MessagingApp/Networking/ClientProgram.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MessagingApp/Networking/Learned from.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MessagingApp/Networking/Network$Message.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MessagingApp/Networking/Network$ServerMessage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MessagingApp/Networking/Network$UserMessage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MessagingApp/Networking/Network.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MessagingApp/Networking/ServerProgram$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MessagingApp/Networking/ServerProgram.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MessagingApp/UI/Controllers/Chatroom.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MessagingApp/UI/Controllers/Login.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MessagingApp/UI/Layouts/Chatroom.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MessagingApp/UI/Layouts/General.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MessagingApp/UI/Layouts/Login.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MessagingApp/UI/Main.class" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -172,11 +199,11 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561136356095" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../Program Files/Java/jre1.8.0_311/lib/ext/jfxrt.jar" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
@@ -364,6 +391,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added lib folder" />
