@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdf1d327-c244-408d-b726-9aa7c320bbb3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/derby.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/kryonet-2.21-all.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/derby.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/kryonet_2_21_all.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MessagingApp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MessagingApp.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/forum/db.lck" beforeDir="false" afterPath="$PROJECT_DIR$/database/forum/db.lck" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/forum/log/log5.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database/forum/log/log5.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/forum/seg0/c490.dat" beforeDir="false" afterPath="$PROJECT_DIR$/database/forum/seg0/c490.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/derby.log" beforeDir="false" afterPath="$PROJECT_DIR$/derby.log" afterDir="false" />
-    </list>
+    <list default="true" id="cdf1d327-c244-408d-b726-9aa7c320bbb3" name="Default Changelist" comment="Added lib folder" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -271,6 +259,14 @@
       <workItem from="1560958738934" duration="4771000" />
       <workItem from="1561131534396" duration="4822000" />
     </task>
+    <task id="LOCAL-00001" summary="Added lib folder">
+      <created>1640654941497</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1640654941497</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -368,6 +364,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added lib folder" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added lib folder" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />

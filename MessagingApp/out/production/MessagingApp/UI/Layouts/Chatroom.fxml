@@ -10,7 +10,7 @@
    <center>
       <VBox BorderPane.alignment="CENTER">
          <children>
-            <ScrollPane hbarPolicy="NEVER" prefHeight="400.0" prefWidth="600.0" stylesheets="@General.css" vbarPolicy="ALWAYS">
+            <ScrollPane hbarPolicy="NEVER" prefHeight="400.0" prefWidth="600.0" vbarPolicy="ALWAYS">
                <content>
                   <VBox fx:id="messageBox" prefHeight="357.0" prefWidth="585.0" />
                </content></ScrollPane>
