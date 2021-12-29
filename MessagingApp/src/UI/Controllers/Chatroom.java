@@ -6,7 +6,6 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -49,14 +48,9 @@ public class Chatroom implements Initializable {
         userName = user;
     }
 
-    boolean setClientProgram() {
-        try {
-            clientProgram = new ClientProgram();
-            return true;
-        } catch (IOException e) {
-            e.printStackTrace();
-            return false;
-        }
+    boolean setClientProgram() throws IOException {
+        clientProgram = new ClientProgram();
+        return true;
     }
 
     /*

@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="MessagingApp">
+    <output-path>$PROJECT_DIR$/out/artifacts/MessagingApp</output-path>
+    <root id="root">
+      <element id="archive" name="MessagingApp.jar">
+        <element id="module-output" name="MessagingApp" />
+      </element>
+    </root>
+  </artifact>
+</component>

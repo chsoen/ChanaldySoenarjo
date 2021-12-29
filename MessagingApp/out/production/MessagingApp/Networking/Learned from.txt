@@ -1,5 +1,0 @@
-https://www.youtube.com/watch?v=KDTLRxppejE
-Learning how server and client works
-
-https://github.com/EsotericSoftware/kryonet/blob/master/examples/com/esotericsoftware/kryonet/examples/chat/Network.java
-A network class used by server and client

@@ -12,7 +12,7 @@ import java.io.IOException;
 
 public class ClientProgram {
     private static Client client;
-    static String ip = "localHost";
+    static String ip = "25.18.134.239";
 
     public ClientProgram() throws IOException {
         System.out.println("Connecting to the server...");
